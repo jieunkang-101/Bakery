@@ -10,14 +10,29 @@ namespace Bakery.Models
     public int Quantity { get; set; }
     public int Price { get; set; }
 
-    // public Bread()
-    // {
-    
-    // }
+    public Bread(int typeNumber, int quantity)
+    {
+      Type = Types[typeNumber];
+      Quantity = quantity;
+      BreadList.Add(this);
+      Price = 0;
+    }
 
-    // public void CaculateBreadPrice()
-    // {
+    public static int TotalQty() 
+    {
+      int totalQty = 0;
+      foreach (Bread bread in BreadList)
+      {
+        totalQty += bread.Quantity;
+      }
+      return totalQty;
+    }
 
-    // }
+    public void CaculateBreadPrice()
+    {
+      int QtyofBread = Bread.TotalQty();
+      int freeBread = QtyofBread / 3;
+      Price += 5 * (QtyofBread - freeBread);
+    }
   }
 }
