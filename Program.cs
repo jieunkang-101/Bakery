@@ -70,6 +70,7 @@ namespace Bakery
       {
           Console.WriteLine($"{i+1}: {Bread.Types[i]}");
       }
+
       Console.WriteLine("----------------------------------------\n"); 
       Console.Write("Enter a number of bread to order: ");
       int typeNumber = int.Parse(Console.ReadLine());
@@ -90,7 +91,6 @@ namespace Bakery
         MainMenu();
       }
     }
-
     public static void showBreadOrder()
     {
       foreach (Bread breadOrder in Bread.BreadList)
