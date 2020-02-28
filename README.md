@@ -5,18 +5,24 @@
 #### By **_Jieun Kang_**
 
 ## Description
-A console application where users can order bread and pastry, and it will return the total cost of the order.
+A console application where users can follow prompts to order bread and pastry, then it will return the total cost of the order.
 
 ## Setup/Installation Requirements
 
 1. Clone this repository on your local machine from `https://github.com/jieunkang-101/Bakery`.
 2. Navigata to the Bakery directory.
 3. Open files in Visual Studio Code or perferred text editor.
-3. Run terminal command `dotnet run` to see this console appication.
+3. Run terminal command `$ dotnet run` to see this console appication.
 
 ## Behavior Driven Development Specifications
-| Behavior(Spec)    | Input>  | Output  |
+| Behavior(Spec) <img width=800/>    | Input <img width=400/>   | Output <img width=500/>  |
 | :---------------- | :-----: | :-----: |
+| The application will display main menu then it will display bread of pastry menu. User can choose to see 'bread menu' then the bread menu will be displayed | 'b' | Bread Menu |
+| Add bread to order when user inputs bread type and quantity. Then the main menu will be displayed.  |type : sourdough <br/>qty: 2 | $ 5 |
+| Add pastry to order when user inputs bread type and quantity. Then the main menu will be displayed.  |type : croissant <br/>qty: 3 | $ 5 |
+| Display the curruent order items and quantities when a user selects 'view order'. | 'v' | Order Status: <br/> added 2 loaves of sourdoagh<br/> added 3 loaves of croissant|
+| Allow user to checkout when a user selects 'checkout' | 'c' | Total Price: $ 10|
+
 
 
 ## Technologies Used
