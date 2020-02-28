@@ -9,6 +9,7 @@ namespace Bakery
     {
       DisplayWelcome();
       MainMenu();
+      PlaceOrder();
     }
 
     public static void DisplayWelcome()
@@ -37,10 +38,46 @@ namespace Bakery
       Console.WriteLine("\n--------- Main Menu ----------");
       Console.WriteLine("Enter 'B' to view Bread Menu");
       Console.WriteLine("Enter 'P' to view Pastry Menu");
-      Console.WriteLine("Enter 'C' to Checkout");
       Console.WriteLine("Enter 'V' to View Order Status");
       Console.WriteLine("-------------------------------\n");
+      string mainInput = Console.ReadLine();
+      if ( mainInput == "B" || mainInput =="b")
+      {
+        BreadMenu();
+      }
+      else if ( mainInput == "P" || mainInput =="p")
+      {
+        PastryMenu();
+      }
+      else if ( mainInput == "V" || mainInput =="v")
+      {
+        OrderStatus();
+      }
+      else 
+      {
+        Console.WriteLine("Please enter B, P or V");
+        MainMenu();
+      }
     }
 
+    public static void BreadMenu()
+    {
+
+    }
+
+    public static void PastryMenu()
+    {
+      
+    }
+
+    public static void OrderStatus()
+    {
+      
+    }
+
+    public static void PlaceOrder()
+    {
+      
+    }
   }
 }      
