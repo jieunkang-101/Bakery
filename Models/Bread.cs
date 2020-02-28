@@ -2,14 +2,14 @@ using System.Collections.Generic;
 
 namespace Bakery.Models
 {
-  public class Bread
+  public class Bread 
   {
-    public string Type { get; set; }
-    public string[] Types { get; } = {"Sourdough" , "Brioche", "Baguette", "Rye"};
-    public static List<Bread> BreadList = new List<Bread> {};
-    public int Quantity { get; set; }
+    public string Type {get; set;}
+    public int Quantity {get; set;}
     public int Price { get; set; }
 
+    public static string[] Types { get; } = {"Sourdough" , "Brioche", "Baguette", "Rye"};
+    public static List<Bread> BreadList = new List<Bread> {};
     public Bread(int typeNumber, int quantity)
     {
       Type = Types[typeNumber];

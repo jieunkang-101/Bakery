@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Bakery.Models;
 
 namespace Bakery
 {
@@ -62,7 +63,20 @@ namespace Bakery
 
     public static void BreadMenu()
     {
+      Console.Clear();
+      Console.WriteLine("\n----- Bread Menu -----");
 
+      for (int i = 0; i < Bread.Types.Length; i++)
+      {
+          Console.WriteLine($"{i}: {Bread.Types[i]}");
+      }
+      
+      Console.WriteLine("Enter a number of bread to order: ");
+      int typeNumber = int.Parse(Console.ReadLine());
+      string type = Bread.Types[typeNumber];
+      Console.WriteLine("Enter a number of loaves to add your order: ");
+      int quantity = int.Parse(Console.ReadLine());
+      Bread newBread = new Bread(typeNumber, quantity);
     }
 
     public static void PastryMenu()
@@ -77,7 +91,7 @@ namespace Bakery
 
     public static void PlaceOrder()
     {
-      
+
     }
   }
 }      
