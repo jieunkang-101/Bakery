@@ -64,21 +64,40 @@ namespace Bakery
     public static void BreadMenu()
     {
       Console.Clear();
-      Console.WriteLine("\n----- Bread Menu -----");
+      Console.WriteLine("\n--------- Bread Menu --------");
 
       for (int i = 0; i < Bread.Types.Length; i++)
       {
-          Console.WriteLine($"{i}: {Bread.Types[i]}");
+          Console.WriteLine($"{i+1}: {Bread.Types[i]}");
       }
-      
-      Console.WriteLine("Enter a number of bread to order: ");
+      Console.WriteLine("----------------------------------------\n"); 
+      Console.Write("Enter a number of bread to order: ");
       int typeNumber = int.Parse(Console.ReadLine());
-      string type = Bread.Types[typeNumber];
-      Console.WriteLine("Enter a number of loaves to add your order: ");
+      Console.Write("Enter a number of loaves to add your order: ");
       int quantity = int.Parse(Console.ReadLine());
       Bread newBread = new Bread(typeNumber, quantity);
+      showBreadOrder();
+      Console.WriteLine("\n-------------------------------------------\n"); 
+      Console.WriteLine("Would you like to add more bread? [Y or N]");
+      string addBread = Console.ReadLine();
+
+      if (addBread == "Y" || addBread == "y")
+      {
+        BreadMenu();
+      }
+      else if (addBread == "N" || addBread == "n")
+      {
+        MainMenu();
+      }
     }
 
+    public static void showBreadOrder()
+    {
+      foreach (Bread breadOrder in Bread.BreadList)
+      {
+        Console.WriteLine($"\n Added {breadOrder.Quantity} loaves of {breadOrder.Type} to your order.");
+      }
+    }
     public static void PastryMenu()
     {
       

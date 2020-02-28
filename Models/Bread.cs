@@ -12,7 +12,7 @@ namespace Bakery.Models
     public static List<Bread> BreadList = new List<Bread> {};
     public Bread(int typeNumber, int quantity)
     {
-      Type = Types[typeNumber];
+      Type = Types[typeNumber-1];
       Quantity = quantity;
       BreadList.Add(this);
       Price = 0;
