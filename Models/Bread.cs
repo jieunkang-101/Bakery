@@ -6,7 +6,7 @@ namespace Bakery.Models
   {
     public string Type {get; set;}
     public int Quantity {get; set;}
-    public int Price { get; set; }
+    //public int Price { get; set; }
     public static string[] Types { get; } = {"Sourdough" , "Brioche", "Baguette", "Rye"};
     private static List<Bread> _breadOrderList = new List<Bread> {};
 
@@ -22,7 +22,12 @@ namespace Bakery.Models
       return _breadOrderList;
     }
 
-    public static int TotalQty() 
+    public static int GetTotalQty()
+    {
+      return TotalQty();
+    }
+
+    private static int TotalQty() 
     {
       int totalQty = 0;
       foreach (Bread bread in _breadOrderList)
@@ -32,7 +37,11 @@ namespace Bakery.Models
       return totalQty;
     }
 
-    public static int CaculateBreadPrice()
+    public static int GetBreadPrice()
+    {
+      return CaculateBreadPrice();
+    }
+    private static int CaculateBreadPrice()
     {
       int totalPrice = 0;
       int QtyOfBread = Bread.TotalQty();

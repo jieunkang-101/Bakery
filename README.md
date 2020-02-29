@@ -19,7 +19,7 @@ A console application where users can follow prompts to order bread and pastry, 
 2. Open the file     
     * This will launch an installer which will walk you through installation steps. Use the default settings the installer suggests.
 3. Confirm the installation is successful (2.2.105)
-    * Open your terminal and run the command <br/> `$ dotnet --version`.    
+    * Open your terminal and run the command <br/> `$ dotnet --version`    
 
 **Windows**
 1. Download [64-bit .NET Core SDK (Software Development Kit)](https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-2.2.203-windows-x64-installer)
@@ -27,7 +27,7 @@ A console application where users can follow prompts to order bread and pastry, 
 2. Open the file
     * Follow the steps provided by the installer for your OS.
 3. Confirm the installation is successful
-    * Open a new Windows PowerShell window and run the command <br/> `$ dotnet --version`.    
+    * Open a new Windows PowerShell window and run the command <br/> `$ dotnet --version`  
 
 ### # Clone this repository
 1. Clone this project.

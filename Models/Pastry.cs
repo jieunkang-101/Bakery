@@ -22,7 +22,12 @@ namespace Bakery.Models
       return _pastryOrderList;
     }
 
-    public static int TotalQty() 
+    public static int GetTotalQty()
+    {
+      return TotalQty();
+    }
+
+    private static int TotalQty() 
     {
       int totalQty = 0;
       foreach (Pastry pastry in _pastryOrderList)
@@ -32,7 +37,11 @@ namespace Bakery.Models
       return totalQty;
     }
 
-    public static int CaculatePastryPrice()
+    public static int GetPastryPrice()
+    {
+      return CaculatePastryPrice();
+    }
+    private static int CaculatePastryPrice()
     {
       int totalPrice = 0;
       int QtyOfPastry = Pastry.TotalQty();

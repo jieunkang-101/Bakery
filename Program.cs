@@ -101,7 +101,7 @@ namespace Bakery
       {
         Console.WriteLine($"\n Added {breadOrder.Quantity} loaves of {breadOrder.Type} to your order.");
       }
-      Console.WriteLine($"\n Total {Bread.TotalQty()} loaves of bread: ${Bread.CaculateBreadPrice()}");
+      Console.WriteLine($"\n Total {Bread.GetTotalQty()} loaves of bread: ${Bread.GetBreadPrice()}");
     }
 
     public static void PastryMenu()
@@ -141,7 +141,7 @@ namespace Bakery
       {
         Console.WriteLine($"\n Added {pastryOrder.Quantity} loaves of {pastryOrder.Type} to your order.");
       }
-      Console.WriteLine($"\n Total {Pastry.TotalQty()} loaves of pastry: ${Pastry.CaculatePastryPrice()}");
+      Console.WriteLine($"\n Total {Pastry.GetTotalQty()} loaves of pastry: ${Pastry.GetPastryPrice()}");
     }
 
     public static void OrderStatus()
@@ -166,9 +166,9 @@ namespace Bakery
     {
       Console.Clear();
       Console.WriteLine("\n----------------------- Checkout --------------------------");
-      Console.WriteLine($"\n * Bread Qty: {Bread.TotalQty()}, ${Bread.CaculateBreadPrice()}");
-      Console.WriteLine($"\n * Pastry Qty: {Pastry.TotalQty()}, ${Pastry.CaculatePastryPrice()}");
-      Console.WriteLine($"\n * Total Price: ${Bread.CaculateBreadPrice() + Pastry.CaculatePastryPrice()} ");
+      Console.WriteLine($"\n * Bread Qty: {Bread.GetTotalQty()}, ${Bread.GetBreadPrice()}");
+      Console.WriteLine($"\n * Pastry Qty: {Pastry.GetTotalQty()}, ${Pastry.GetPastryPrice()}");
+      Console.WriteLine($"\n * Total Price: ${Bread.GetBreadPrice() + Pastry.GetPastryPrice()} ");
       Console.WriteLine("\n Thank you for your order from Pierre's Bakery. Good-Bye!");
       Console.WriteLine("-----------------------------------------------------------\n"); 
     }
