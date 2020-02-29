@@ -71,7 +71,7 @@ namespace Bakery
 
       for (int i = 0; i < Bread.Types.Length; i++)
       {
-          Console.WriteLine($"{i+1}: {Bread.Types[i]}");
+        Console.WriteLine($"{i+1}: {Bread.Types[i]}");
       }
 
       Console.WriteLine("---------------------------------------------------\n"); 
@@ -142,12 +142,21 @@ namespace Bakery
     }
     public static void OrderStatus()
     {
+      Console.Clear();
+      Console.WriteLine("\n------------------ Order Status --------------------");
       
+      Main();
     }
 
     public static void Checkout()
     {
-    Console.WriteLine($"You have purchased {Bread.TotalQty()} loaves of bread for ${Bread.CaculateBreadPrice()}");
+      Console.Clear();
+      Console.WriteLine("\n------------------- Checkout ----------------------");
+      Console.WriteLine($"Bread Qty: {Bread.TotalQty()}, ${Bread.CaculateBreadPrice()}");
+      Console.WriteLine($"Pastry Qty: {Pastry.TotalQty()}, ${Pastry.CaculatePastryPrice()}");
+      Console.WriteLine($"Total Price: ${Bread.CaculateBreadPrice() + Pastry.CaculatePastryPrice()} ");
+      Console.WriteLine("Thank you for your order from Pierre's Bakery. Good-Bye!");
+      Console.WriteLine("---------------------------------------------------\n"); 
     }
   }
 }      
