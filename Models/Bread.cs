@@ -7,20 +7,25 @@ namespace Bakery.Models
     public string Type {get; set;}
     public int Quantity {get; set;}
     public int Price { get; set; }
-
     public static string[] Types { get; } = {"Sourdough" , "Brioche", "Baguette", "Rye"};
-    public static List<Bread> BreadList = new List<Bread> {};
+    private static List<Bread> _breadOrderList = new List<Bread> {};
+
     public Bread(int typeNumber, int quantity)
     {
       Type = Types[typeNumber-1];
       Quantity = quantity;
-      BreadList.Add(this);
+      _breadOrderList.Add(this);
+    }
+
+    public static List<Bread> GetBreadList()
+    {
+      return _breadOrderList;
     }
 
     public static int TotalQty() 
     {
       int totalQty = 0;
-      foreach (Bread bread in BreadList)
+      foreach (Bread bread in _breadOrderList)
       {
         totalQty += bread.Quantity;
       }
@@ -30,9 +35,9 @@ namespace Bakery.Models
     public static int CaculateBreadPrice()
     {
       int totalPrice = 0;
-      int QtyofBread = Bread.TotalQty();
-      int freeBread = QtyofBread / 3;
-      totalPrice += 5 * (QtyofBread - freeBread);
+      int QtyOfBread = Bread.TotalQty();
+      int freeBread = QtyOfBread / 3;
+      totalPrice += 5 * (QtyOfBread - freeBread);
       return totalPrice;
     }
   }

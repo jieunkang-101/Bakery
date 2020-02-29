@@ -97,7 +97,7 @@ namespace Bakery
 
     public static void showBreadOrder()
     {
-      foreach (Bread breadOrder in Bread.BreadList)
+      foreach (Bread breadOrder in Bread.GetBreadList())
       {
         Console.WriteLine($"\n Added {breadOrder.Quantity} loaves of {breadOrder.Type} to your order.");
       }
@@ -137,7 +137,7 @@ namespace Bakery
 
     public static void showPastryOrder()
     {
-      foreach (Pastry pastryOrder in Pastry.PastryList)
+      foreach (Pastry pastryOrder in Pastry.GetPastryList())
       {
         Console.WriteLine($"\n Added {pastryOrder.Quantity} loaves of {pastryOrder.Type} to your order.");
       }
@@ -149,12 +149,12 @@ namespace Bakery
       Console.Clear();
       Console.WriteLine("\n------------------ Order Status --------------------");
 
-      foreach (Bread breadOrder in Bread.BreadList)
+      foreach (Bread breadOrder in Bread.GetBreadList())
       {
         Console.WriteLine($"\n * {breadOrder.Type}: {breadOrder.Quantity}");
       }
 
-        foreach (Pastry pastryOrder in Pastry.PastryList)
+        foreach (Pastry pastryOrder in Pastry.GetPastryList())
       {
         Console.WriteLine($"\n * {pastryOrder.Type}: {pastryOrder.Quantity}");
       }
