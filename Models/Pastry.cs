@@ -41,6 +41,7 @@ namespace Bakery.Models
     {
       return CaculatePastryPrice();
     }
+    
     private static int CaculatePastryPrice()
     {
       int totalPrice = 0;
