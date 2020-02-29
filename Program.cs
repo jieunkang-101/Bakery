@@ -25,7 +25,7 @@ namespace Bakery
                                                                                                 \__.'   
       ");
       Console.WriteLine("\n----------- Welcome to Pierre's Bakery -----------\n");
-      Console.WriteLine("Bread: $5    Special Deal: Buy 2, get 1 free \n");
+      Console.WriteLine("Bread: $5    Special Deal: Buy 2, Get 1 Free \n");
       Console.WriteLine("Pastry: $2   Special Deal: 3 for $5\n");
       Console.WriteLine("----------------------------------------------------\n");
       Console.Write("Press any key to continue.\n");
@@ -59,7 +59,7 @@ namespace Bakery
       }
       else 
       {
-        Console.WriteLine("Please enter B, P or V.\n");
+        Console.WriteLine("Please enter B, P, V or C.\n");
         MainMenu();
       }
     }
@@ -94,6 +94,7 @@ namespace Bakery
         MainMenu();
       }
     }
+
     public static void showBreadOrder()
     {
       foreach (Bread breadOrder in Bread.BreadList)
@@ -102,6 +103,7 @@ namespace Bakery
       }
       Console.WriteLine($"\n Total {Bread.TotalQty()} loaves of bread: ${Bread.CaculateBreadPrice()}");
     }
+
     public static void PastryMenu()
     {
       Console.Clear();
@@ -132,6 +134,7 @@ namespace Bakery
         MainMenu();
       }
     }
+
     public static void showPastryOrder()
     {
       foreach (Pastry pastryOrder in Pastry.PastryList)
@@ -140,6 +143,7 @@ namespace Bakery
       }
       Console.WriteLine($"\n Total {Pastry.TotalQty()} loaves of pastry: ${Pastry.CaculatePastryPrice()}");
     }
+
     public static void OrderStatus()
     {
       Console.Clear();
@@ -161,12 +165,12 @@ namespace Bakery
     public static void Checkout()
     {
       Console.Clear();
-      Console.WriteLine("\n---------------------- Checkout -------------------------");
+      Console.WriteLine("\n----------------------- Checkout --------------------------");
       Console.WriteLine($"\n * Bread Qty: {Bread.TotalQty()}, ${Bread.CaculateBreadPrice()}");
       Console.WriteLine($"\n * Pastry Qty: {Pastry.TotalQty()}, ${Pastry.CaculatePastryPrice()}");
       Console.WriteLine($"\n * Total Price: ${Bread.CaculateBreadPrice() + Pastry.CaculatePastryPrice()} ");
       Console.WriteLine("\n Thank you for your order from Pierre's Bakery. Good-Bye!");
-      Console.WriteLine("---------------------------------------------------------\n"); 
+      Console.WriteLine("-----------------------------------------------------------\n"); 
     }
   }
 }      
