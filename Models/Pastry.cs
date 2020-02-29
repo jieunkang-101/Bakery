@@ -15,7 +15,6 @@ namespace Bakery.Models
       Type = Types[typeNumber-1];
       Quantity = quantity;
       PastryList.Add(this);
-      Price = 0;
     }
 
     public static int TotalQty() 
@@ -28,11 +27,12 @@ namespace Bakery.Models
       return totalQty;
     }
 
-    public void CaculatePastryPrice()
+    public static int CaculatePastryPrice()
     {
+      int totalPrice = 0;
       int QtyofPastry = Pastry.TotalQty();
-      int freePastry = QtyofPastry / 3;
-      Price += 5 * (QtyofPastry - freePastry);
+      totalPrice += (QtyofPastry * 2) - (QtyofPastry /3);
+      return totalPrice;
     }
   }
 }

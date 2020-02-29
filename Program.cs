@@ -10,7 +10,6 @@ namespace Bakery
     {
       DisplayWelcome();
       MainMenu();
-      PlaceOrder();
     }
 
     public static void DisplayWelcome()
@@ -36,9 +35,10 @@ namespace Bakery
     public static void MainMenu()
     {
       Console.WriteLine("\n-------------------- Main Menu ---------------------");
-      Console.WriteLine("Enter 'B' to view Bread Menu");
-      Console.WriteLine("Enter 'P' to view Pastry Menu");
-      Console.WriteLine("Enter 'V' to View Order Status");
+      Console.WriteLine("Enter 'B' to view Bread Menu.");
+      Console.WriteLine("Enter 'P' to view Pastry Menu.");
+      Console.WriteLine("Enter 'V' to View Order Status.");
+      Console.WriteLine("Enter 'C' to Checkout.");
       Console.WriteLine("----------------------------------------------------\n");
       string mainInput = Console.ReadLine();
       if ( mainInput == "B" || mainInput =="b")
@@ -52,6 +52,10 @@ namespace Bakery
       else if ( mainInput == "V" || mainInput =="v")
       {
         OrderStatus();
+      }
+      else if ( mainInput == "C" || mainInput =="c")
+      {
+        Checkout();
       }
       else 
       {
@@ -96,6 +100,7 @@ namespace Bakery
       {
         Console.WriteLine($"\n Added {breadOrder.Quantity} loaves of {breadOrder.Type} to your order.");
       }
+      Console.WriteLine($"\n Total {Bread.TotalQty()} loaves of bread: ${Bread.CaculateBreadPrice()}");
     }
     public static void PastryMenu()
     {
@@ -133,15 +138,16 @@ namespace Bakery
       {
         Console.WriteLine($"\n Added {pastryOrder.Quantity} loaves of {pastryOrder.Type} to your order.");
       }
+      Console.WriteLine($"\n Total {Pastry.TotalQty()} loaves of pastry: ${Pastry.CaculatePastryPrice()}");
     }
     public static void OrderStatus()
     {
       
     }
 
-    public static void PlaceOrder()
+    public static void Checkout()
     {
-
+    Console.WriteLine($"You have purchased {Bread.TotalQty()} loaves of bread for ${Bread.CaculateBreadPrice()}");
     }
   }
 }      
