@@ -144,19 +144,29 @@ namespace Bakery
     {
       Console.Clear();
       Console.WriteLine("\n------------------ Order Status --------------------");
-      
-      Main();
+
+      foreach (Bread breadOrder in Bread.BreadList)
+      {
+        Console.WriteLine($"\n * {breadOrder.Type}: {breadOrder.Quantity}");
+      }
+
+        foreach (Pastry pastryOrder in Pastry.PastryList)
+      {
+        Console.WriteLine($"\n * {pastryOrder.Type}: {pastryOrder.Quantity}");
+      }
+      Console.WriteLine("\n--------------------------------------------------\n"); 
+      MainMenu();
     }
 
     public static void Checkout()
     {
       Console.Clear();
-      Console.WriteLine("\n------------------- Checkout ----------------------");
-      Console.WriteLine($"Bread Qty: {Bread.TotalQty()}, ${Bread.CaculateBreadPrice()}");
-      Console.WriteLine($"Pastry Qty: {Pastry.TotalQty()}, ${Pastry.CaculatePastryPrice()}");
-      Console.WriteLine($"Total Price: ${Bread.CaculateBreadPrice() + Pastry.CaculatePastryPrice()} ");
-      Console.WriteLine("Thank you for your order from Pierre's Bakery. Good-Bye!");
-      Console.WriteLine("---------------------------------------------------\n"); 
+      Console.WriteLine("\n---------------------- Checkout -------------------------");
+      Console.WriteLine($"\n * Bread Qty: {Bread.TotalQty()}, ${Bread.CaculateBreadPrice()}");
+      Console.WriteLine($"\n * Pastry Qty: {Pastry.TotalQty()}, ${Pastry.CaculatePastryPrice()}");
+      Console.WriteLine($"\n * Total Price: ${Bread.CaculateBreadPrice() + Pastry.CaculatePastryPrice()} ");
+      Console.WriteLine("\n Thank you for your order from Pierre's Bakery. Good-Bye!");
+      Console.WriteLine("---------------------------------------------------------\n"); 
     }
   }
 }      
