@@ -17,11 +17,12 @@ A console application where users can follow prompts to order bread and pastry, 
 ## Behavior Driven Development Specifications
 | Behavior(Spec) <img width=800/>    | Input <img width=400/>   | Output <img width=500/>  |
 | :---------------- | :-----: | :-----: |
-| The application will display main menu then it will display bread of pastry menu. User can choose to see 'bread menu' then the bread menu will be displayed | 'b' | Bread Menu |
-| Add bread to order when user inputs bread type and quantity. Then the main menu will be displayed.  |type : Sourdough <br/>qty: 2 | $ 10 |
+| The application will display welcome message. When user presses any key, it will displayed main menu. | 'any key' | Main Menu |
+| User will be able to select bread menu, pastry menu, view order status or checkout. | 'b' | Bread Menu |
+| Add bread to order when user inputs bread type and quantity. Then the main menu will be displayed.  |type : Sourdough <br/>qty: 4 | $ 15 |
 | Add pastry to order when user inputs bread type and quantity. Then the main menu will be displayed.  |type : Croissant <br/>qty: 3 | $ 5 |
-| Display the curruent order items and quantities when a user selects 'view order'. | 'v' | Order Status: <br/> added 2 loaves of Sourdoagh<br/> added 3 loaves of Croissant|
-| Allow user to checkout when a user selects 'checkout' | 'c' | Total Price: $ 15 |
+| Display the curruent order items and quantities when a user selects 'View Order Status'. | 'v' | Order Status: <br/> Sourdoagh : 4 <br/> Croissant : 3 |
+| Allow user to checkout when a user selects 'checkout' | 'c' | Total Price: $ 30 |
 
 
 
