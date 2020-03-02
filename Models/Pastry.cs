@@ -6,7 +6,6 @@ namespace Bakery.Models
   {
     public string Type {get; set;}
     public int Quantity {get; set;}
-    public int Price { get; set; }
     public static string[] Types { get; } = {"Croissant" , "Apple Pie", "Strudel", "Mille-feuille"};
     private static List<Pastry> _pastryOrderList = new List<Pastry> {};
 
