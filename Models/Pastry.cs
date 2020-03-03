@@ -44,8 +44,8 @@ namespace Bakery.Models
     private static int CaculatePastryPrice()
     {
       int totalPrice = 0;
-      int QtyOfPastry = Pastry.TotalQty();
-      totalPrice += (QtyOfPastry * 2) - (QtyOfPastry /3);
+      int qtyOfPastry = TotalQty();
+      totalPrice += (qtyOfPastry * 2) - (qtyOfPastry /3);
       return totalPrice;
     }
   }
