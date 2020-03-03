@@ -44,9 +44,9 @@ namespace Bakery.Models
     private static int CaculateBreadPrice()
     {
       int totalPrice = 0;
-      int QtyOfBread = Bread.TotalQty();
-      int freeBread = QtyOfBread / 3;
-      totalPrice += 5 * (QtyOfBread - freeBread);
+      int qtyOfBread = TotalQty();
+      int freeBread = qtyOfBread / 3;
+      totalPrice += 5 * (qtyOfBread - freeBread);
       return totalPrice;
     }
   }
