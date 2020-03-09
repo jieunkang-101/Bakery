@@ -8,12 +8,14 @@ namespace Bakery.Models
     public int Quantity {get; set;}
     public static string[] Types { get; } = {"Sourdough" , "Brioche", "Baguette", "Rye"};
     private static List<Bread> _breadOrderList = new List<Bread> {};
+    public static int TotalPrice {get; set;}
 
     public Bread(int typeNumber, int quantity)
     {
       Type = Types[typeNumber-1];
       Quantity = quantity;
       _breadOrderList.Add(this);
+      TotalPrice = 0;
     }
 
     public static List<Bread> GetBreadList()
@@ -43,11 +45,11 @@ namespace Bakery.Models
     
     private static int CaculateBreadPrice()
     {
-      int totalPrice = 0;
+      //totalPrice = 0;
       int qtyOfBread = TotalQty();
       int freeBread = qtyOfBread / 3;
-      totalPrice += 5 * (qtyOfBread - freeBread);
-      return totalPrice;
+      Bread.TotalPrice += 5 * (qtyOfBread - freeBread);
+      return Bread.TotalPrice;
     }
   }
 }

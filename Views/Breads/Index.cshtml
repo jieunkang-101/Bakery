@@ -1,0 +1,17 @@
+@using Bakery.Models;
+
+<h1>Order Status</h1>
+
+@if (Model.Count == 0)
+{
+  <p>Plaese add order.</p>
+}
+<ul>
+  @foreach (Bread bread in Model)
+  {
+    <li>@bread.Type</li>
+    <li>@bread.Quantity</li>
+  }
+</ul>
+<p>@Bread.TotalPrice</p>
+<a href="/breads/new">Add a new item.</a>
